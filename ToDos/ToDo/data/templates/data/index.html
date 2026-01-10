@@ -11,7 +11,10 @@
         <a href="{% url 'add' %}" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Add Task</a>
     </div>
     {% for data in data %}
-        <h1>{{data.id}}-{{data.title}}-{{data.created_at}}</h1>
+           <div style="display: flex; align-items: center; margin-bottom: 10px;">
+              <h1 style="margin-right: 20px;">{{data.id}}-{{data.title}}-{{data.created_at}}</h1>
+              <a href="{% url 'edit' data.id %}" class="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600 transition">Edit</a>
+           </div>
     {% endfor %}
 {% endblock content %}
     
