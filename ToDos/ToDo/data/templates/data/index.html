@@ -7,6 +7,9 @@
     
 
 {% block content %}
+    <div style="margin-bottom: 20px;">
+        <a href="{% url 'add' %}" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Add Task</a>
+    </div>
     {% for data in data %}
         <h1>{{data.id}}-{{data.title}}-{{data.created_at}}</h1>
     {% endfor %}
