@@ -32,3 +32,12 @@ def edit_task(request, task_id):
     else:
         form = DataForm(instance=data)
     return render(request, 'data/data_form.html', {'form':form})
+
+
+def delete_task(request, task_id):
+    data  = get_object_or_404(Data, pk=task_id,)
+    if request.method=="POST":
+        data.delete()
+        return redirect('index')
+    
+    return render(request, 'data/index.html')
